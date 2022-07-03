@@ -11,7 +11,7 @@ public class PetController {
 
     private final PetService petService;
 
-    public PetController( PetService petService) {
+    public PetController( PetService petService) { // will search for 'petService' bean
         this.petService = petService;
     }
 
