@@ -5,14 +5,12 @@ import com.springframework.pets.PetServiceFactory;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 /**
  * @author Herman Kulik
  */
+@ImportResource("classpath:sfgdi-config.xml") // imports set up from xml
 @Configuration
 public class GreetingServiceConfig {
 
@@ -59,10 +57,10 @@ public class GreetingServiceConfig {
     }
 
     // the name of each bean below is <method's name, that returns a bean>
-    @Bean
-    ConstructorGreetingService constructorGreetingService() {
-        return new ConstructorGreetingService();
-    }
+//    @Bean
+//    ConstructorGreetingService constructorGreetingService() {
+//        return new ConstructorGreetingService();
+//    }
 
     // good if you are working with a 3rd party component (Jackson library)
     @Bean
